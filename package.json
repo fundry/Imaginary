@@ -9,7 +9,12 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.4"
+    "react-native": "0.60.4",
+    "react-native-navigation": "^2.26.5",
+    "react-native-root-modal": "^3.1.2",
+    "react-native-vector-icons": "^6.6.0",
+    "react-navigation": "^3.11.1",
+    "react-navigation-fluid-transitions": "^0.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
