@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { SafeAreaView, View, StatusBar } from 'react-native';
 
-import { Home } from './src/index';
+import Routes from './src/navigator';
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <View style={{ flex: '1' }}>
-          <Home />
+          <Routes />
         </View>
       </SafeAreaView>
     </Fragment>
