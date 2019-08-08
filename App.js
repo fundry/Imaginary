@@ -8,7 +8,7 @@ const App = () => {
     <Fragment>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <View style={{ flex: '1' }}>
+        <View style={{ flex: 1 }}>
           <Routes />
         </View>
       </SafeAreaView>

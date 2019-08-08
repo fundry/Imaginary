@@ -1,5 +1,6 @@
 import React from 'react';
-import { FluidNavigator, Transition } from 'react-navigation-fluid-transitions';
+import { FluidNavigator, Transition , createFluidNavigator } from 'react-navigation-fluid-transitions';
+import { createAppContainer  } from 'react-navigation';
 import {
   View,
   Text,
@@ -8,19 +9,19 @@ import {
   Button,
   StyleSheet,
 } from 'react-native';
-import { Right, Left } from 'native-base';
-import Drawer from '../screens/food/one/Drawer';
-import { createSwitchNavigator } from 'react-navigation';
-import Prefrence from '../screens/prefrences/Prefrence';
+import { Home } from './index';
 
 const LogoImage = (props) => (
-  <Image source={require('./12.jpg')} style={props.style} style={props.style} />
+  <Image source={require('./images/12.jpg')} style={props.style} />
 );
 
 class First extends React.Component {
   render() {
     return (
       <View style={[styles.container]}>
+
+        <Text> SOME TEXT HERE  </Text>
+        
         <Transition shared="logo">
           <LogoImage style={styles.largeLogo} />
         </Transition>
@@ -50,7 +51,7 @@ class Second extends React.Component {
             <View>
               <Text style={styles.paragraph}>
                 <Text style={{ fontWeight: 'normal' }}>
-                  EXPLANATION OF HOW UNISPOON WORKS
+                  EXPLANATION OF HOW UNISPoooOON WORKS
                 </Text>
               </Text>
             </View>
@@ -58,43 +59,36 @@ class Second extends React.Component {
         </Transition>
 
         <View style={{ flexDirection: 'row', marginHorizontal: 30 }}>
-          <Left>
-            <Transition appear="horizontal">
-              <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
-                <View>
-                  <Text style={{ fontWeight: 'bold', fontSize: 17 }}>BACK</Text>
-                </View>
-              </TouchableOpacity>
-            </Transition>
-          </Left>
+          <Transition appear="horizontal">
+            <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+              <View>
+                <Text style={{ fontWeight: 'bold', fontSize: 17 }}>BACK</Text>
+              </View>
+            </TouchableOpacity>
+          </Transition>
 
-          <Right>
-            <Transition appear="horizontal">
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('next')}
-              >
-                <View>
-                  <Text style={{ fontWeight: 'bold', fontSize: 17 }}>
-                    {' '}
-                    DONE
-                  </Text>
-                </View>
-              </TouchableOpacity>
-            </Transition>
-          </Right>
+          <Transition appear="horizontal">
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('next')}
+            >
+              <View>
+                <Text style={{ fontWeight: 'bold', fontSize: 17 }}>DONE</Text>
+              </View>
+            </TouchableOpacity>
+          </Transition>
         </View>
       </View>
     );
   }
 }
 
-const RootStack = FluidNavigator(
+const RootStack = createFluidNavigator(
   {
     first: { screen: First },
 
     second: { screen: Second },
 
-    prefrence: { screen: Prefrence },
+    home: { screen: Home },
   },
   {
     navigationOptions: {
@@ -103,26 +97,9 @@ const RootStack = FluidNavigator(
   }
 );
 
-const Next = createSwitchNavigator(
-  {
-    //default screen upon load
-    one: { screen: RootStack },
+const AppContainer = createAppContainer(RootStack);
 
-    next: { screen: Drawer },
-  },
-  {
-    navigationOptions: {
-      header: null,
-    },
-  }
-);
-
-class Routes extends React.Component {
-  render() {
-    return <Next />;
-  }
-}
-export default Routes;
+export default AppContainer;
 //  ==================
 
 const styles = StyleSheet.create({
