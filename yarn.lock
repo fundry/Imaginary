@@ -5241,6 +5241,11 @@ react-native-navigation@^2.26.5:
     react-lifecycles-compat "2.0.0"
     tslib "1.9.3"
 
+react-native-reanimated@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.2.0.tgz#9219227a52a5dfa4d34c324596d6726ccd874293"
+  integrity sha512-vkWRHrPK5qfHP/ZawlRoo38oeYe9NZaaOH/lmFxRcsKzaSK6x3H5ZPXI8lK6MfTLveqwo1QhJje3zIKXO4nQQw==
+
 react-native-root-modal@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/react-native-root-modal/-/react-native-root-modal-3.1.2.tgz#6ff79a76a78204cf2b3860f5e75dc74143bf8317"

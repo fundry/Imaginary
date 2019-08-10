@@ -1,6 +1,6 @@
 import React from 'react';
 import { FluidNavigator, Transition , createFluidNavigator } from 'react-navigation-fluid-transitions';
-import { createAppContainer  } from 'react-navigation';
+import { createAppContainer , createStackNavigator  } from 'react-navigation';
 import {
   View,
   Text,
